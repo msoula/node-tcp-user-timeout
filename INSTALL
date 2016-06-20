@@ -1,0 +1,19 @@
+NOTE: on debian jessie, default node version is 0.10
+NOTE: on debian jessie, node-gyp seems buggy, you've got to use
+      the most recent version of node-gyp (https://github.com/nodejs/node-gyp)
+
+Build addon with node-0.10 on debian jessie
+-------------------------------------------
+
+$NODE-GYP/bin/node-gyp.js configure
+$NODE-GYP/bin/node-gyp.js build
+
+
+Build addon with node-0.12 on debian jessie
+-------------------------------------------
+
+export PATH=$NODE/out/Release:$PATH
+
+$NODE-GYP/bin/node-gyp.js configure --nodedir $NODE
+$NODE-GYP/bin/node-gyp.js build --nodedir $NODE
+
